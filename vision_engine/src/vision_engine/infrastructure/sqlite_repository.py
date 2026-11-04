@@ -21,6 +21,7 @@ from sqlalchemy import (
     select,
     text,
 )
+from sqlalchemy.dialects.sqlite import insert as sqlite_insert
 from sqlalchemy.orm import Mapped, Session, mapped_column, sessionmaker
 
 from vision_engine.domain.enums import (
@@ -1252,20 +1253,20 @@ class SqliteRepository(
             }
 
     def ensure_prompt_version(self, name: str, content_hash: str) -> None:
+        # Atomic upsert: concurrent evaluation arms call this with the same name,
+        # and a select-then-insert races into a UNIQUE(name) violation.
+        stmt = sqlite_insert(PromptVersionRow).values(
+            version_id=new_id("prompt"),
+            name=name,
+            content_hash=content_hash,
+            created_at=utcnow(),
+        )
+        stmt = stmt.on_conflict_do_update(
+            index_elements=[PromptVersionRow.name],
+            set_={"content_hash": stmt.excluded.content_hash},
+        )
         with self.session() as session:
-            existing = session.scalars(
-                select(PromptVersionRow).where(PromptVersionRow.name == name)
-            ).first()
-            if existing:
-                existing.content_hash = content_hash
-            else:
-                session.add(
-                    PromptVersionRow(
-                        version_id=new_id("prompt"),
-                        name=name,
-                        content_hash=content_hash,
-                    )
-                )
+            session.execute(stmt)
 
     def ensure_model_version(self, provider: str, model_name: str, role: str) -> None:
         with self.session() as session:

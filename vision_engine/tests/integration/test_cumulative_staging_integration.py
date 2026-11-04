@@ -39,12 +39,12 @@ from vision_engine.settings import AppSettings, clear_settings_cache
 
 
 ROOT = Path(__file__).resolve().parents[2]
-CATALOGUE = ROOT / "data" / "catalogue" / "sample_products.csv"
+CATALOGUE = ROOT / "tests" / "fixtures" / "catalogue" / "sample_products.csv"
 
 
 def _settings(tmp_path: Path) -> AppSettings:
     clear_settings_cache()
-    for name in ("configs", "src", "data"):
+    for name in ("configs", "src"):
         src = ROOT / name
         dest = tmp_path / name
         if src.exists() and not dest.exists():

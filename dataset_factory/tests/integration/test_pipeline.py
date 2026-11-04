@@ -16,7 +16,7 @@ from design_dataset.infrastructure.sqlite_repository import SqliteRepository
 from design_dataset.settings import AppSettings, clear_settings_cache
 
 ROOT = Path(__file__).resolve().parents[2]
-SOURCE_IMAGES = ROOT / "data" / "raw_images" / "contemporary_europe"
+SOURCE_IMAGES = ROOT / "tests" / "fixtures" / "sample_data" / "raw_images" / "contemporary_europe"
 
 
 def _settings(tmp_path: Path) -> AppSettings:
@@ -42,7 +42,7 @@ def test_ingest_label_review_export_idempotent(tmp_path: Path):
     image_dir = tmp_path / "images"
     image_dir.mkdir()
     sources = sorted(SOURCE_IMAGES.glob("*.jpg"))[:3]
-    assert sources, "expected local contemporary_europe images"
+    assert sources, "expected fixture contemporary_europe images"
     for src in sources:
         shutil.copy2(src, image_dir / src.name)
 

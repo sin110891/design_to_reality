@@ -1,0 +1,7 @@
+product_id,canonical_name,brand_name,product_type,description,variant_sku,colour,finish,material,width_mm,height_mm,depth_mm,supplier_name,supplier_sku,unit_price,currency_code,stock_status,lead_time_days_min,lead_time_days_max,region_types
+prod_sofa_01,Calder Deep Sofa,West Elm,sofa,Deep seat linen sofa,WE-SF-001,Natural,Linen,Linen,2200,850,950,West Elm UK,WE-SF-001,2499.00,GBP,in_stock,14,28,sofa
+prod_sofa_02,Oslo Modular Sofa,Made,sofa,Low profile modular sofa,MADE-SF-02,Grey,Wool blend,Wool,2100,780,920,Made.com,MADE-SF-02,1899.00,GBP,in_stock,21,35,sofa
+prod_table_01,Arc Coffee Table,John Lewis,coffee_table,Oak veneer coffee table,JL-CT-101,Oak,Matte,Oak,1100,400,600,John Lewis,JL-CT-101,649.00,GBP,in_stock,7,14,coffee_table
+prod_light_01,Brass Dome Pendant,Habitat,pendant_light,Brass dome pendant light,HAB-PL-01,Brass,Polished,Metal,450,350,450,Habitat,HAB-PL-01,189.00,GBP,in_stock,5,10,pendant_light
+prod_rug_01,Wool Flatweave Rug,La Redoute,rug,Neutral flatweave wool rug,LR-RG-01,Beige,Flatweave,Wool,2400,10,3400,La Redoute,LR-RG-01,899.00,GBP,in_stock,10,21,rug
+prod_floor_01,Engineered Oak Flooring,Quick-Step,floor_finish,Wide plank engineered oak,QS-FL-01,Natural,Oiled,Oak,2200,14,2200,Quick-Step,QS-FL-01,79.00,GBP,in_stock,7,14,floor_finish

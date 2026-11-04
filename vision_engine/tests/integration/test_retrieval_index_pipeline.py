@@ -22,8 +22,8 @@ from vision_engine.settings import AppSettings, clear_settings_cache
 
 ROOT = Path(__file__).resolve().parents[2]
 FACTORY = ROOT.parent / "dataset_factory"
-SOURCE_IMAGES = FACTORY / "data" / "raw_images" / "contemporary_europe"
-GOLD = FACTORY / "data" / "exports" / "gemini_demo_gold.jsonl"
+SOURCE_IMAGES = FACTORY / "tests" / "fixtures" / "sample_data" / "raw_images" / "contemporary_europe"
+GOLD = FACTORY / "tests" / "fixtures" / "sample_data" / "exports" / "gemini_demo_gold.jsonl"
 
 
 def _settings(tmp_path: Path) -> AppSettings:

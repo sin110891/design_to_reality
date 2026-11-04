@@ -1,0 +1,32 @@
+.venv/
+**/__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+.DS_Store
+.idea/
+
+# Keep launch configs; ignore other local VS Code state
+.vscode/*
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# local secrets (examples stay tracked)
+dataset_factory/.env
+vision_engine/.env
+dataset_factory/.venv/
+vision_engine/.venv/
+
+# local runtime data: photos, generated images, databases
+dataset_factory/data/
+vision_engine/data/
+
+# copyrighted references and local scratch
+knowledge_base/
+temp_dir/
+
+*.xlsx

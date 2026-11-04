@@ -1,0 +1,295 @@
+{
+  "$defs": {
+    "NegativeDesignKnowledge": {
+      "properties": {
+        "design_failure": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Design Failure"
+        },
+        "why_it_fails": {
+          "maxLength": 800,
+          "minLength": 5,
+          "title": "Why It Fails",
+          "type": "string"
+        },
+        "scale_problem": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scale Problem"
+        },
+        "material_conflict": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Material Conflict"
+        },
+        "lighting_problem": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lighting Problem"
+        },
+        "impractical_detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Impractical Detail"
+        },
+        "generic_ai_artifact": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Generic Ai Artifact"
+        },
+        "structural_violation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Structural Violation"
+        }
+      },
+      "required": [
+        "why_it_fails"
+      ],
+      "title": "NegativeDesignKnowledge",
+      "type": "object"
+    },
+    "PositiveDesignKnowledge": {
+      "properties": {
+        "design_move": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Design Move"
+        },
+        "why_it_works": {
+          "maxLength": 800,
+          "minLength": 5,
+          "title": "Why It Works",
+          "type": "string"
+        },
+        "focal_point": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Focal Point"
+        },
+        "material_relationship": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Material Relationship"
+        },
+        "lighting_strategy": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lighting Strategy"
+        },
+        "proportion_rule": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Proportion Rule"
+        },
+        "circulation_strategy": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Circulation Strategy"
+        },
+        "visual_hierarchy": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Visual Hierarchy"
+        },
+        "appropriate_room_conditions": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Appropriate Room Conditions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "why_it_works"
+      ],
+      "title": "PositiveDesignKnowledge",
+      "type": "object"
+    }
+  },
+  "properties": {
+    "style_family": {
+      "title": "Style Family",
+      "type": "string"
+    },
+    "mood": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 5,
+      "minItems": 1,
+      "title": "Mood",
+      "type": "array"
+    },
+    "material_palette": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 8,
+      "minItems": 1,
+      "title": "Material Palette",
+      "type": "array"
+    },
+    "budget_band": {
+      "title": "Budget Band",
+      "type": "string"
+    },
+    "primary_trade": {
+      "title": "Primary Trade",
+      "type": "string"
+    },
+    "likely_trades_required": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 8,
+      "minItems": 1,
+      "title": "Likely Trades Required",
+      "type": "array"
+    },
+    "room_type": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Room Type"
+    },
+    "positive": {
+      "$ref": "#/$defs/PositiveDesignKnowledge"
+    },
+    "negative": {
+      "$ref": "#/$defs/NegativeDesignKnowledge"
+    },
+    "confidence_notes": {
+      "maxLength": 500,
+      "title": "Confidence Notes",
+      "type": "string"
+    },
+    "visible_uncertainties": {
+      "items": {
+        "type": "string"
+      },
+      "maxItems": 8,
+      "title": "Visible Uncertainties",
+      "type": "array"
+    }
+  },
+  "required": [
+    "style_family",
+    "mood",
+    "material_palette",
+    "budget_band",
+    "primary_trade",
+    "likely_trades_required",
+    "positive",
+    "negative",
+    "confidence_notes"
+  ],
+  "title": "DesignLabelDraft",
+  "type": "object"
+}

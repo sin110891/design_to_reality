@@ -1,0 +1,529 @@
+{
+  "$defs": {
+    "DesignLabelDraft": {
+      "properties": {
+        "style_family": {
+          "title": "Style Family",
+          "type": "string"
+        },
+        "mood": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 5,
+          "minItems": 1,
+          "title": "Mood",
+          "type": "array"
+        },
+        "material_palette": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Material Palette",
+          "type": "array"
+        },
+        "budget_band": {
+          "title": "Budget Band",
+          "type": "string"
+        },
+        "primary_trade": {
+          "title": "Primary Trade",
+          "type": "string"
+        },
+        "likely_trades_required": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "minItems": 1,
+          "title": "Likely Trades Required",
+          "type": "array"
+        },
+        "room_type": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Room Type"
+        },
+        "positive": {
+          "$ref": "#/$defs/PositiveDesignKnowledge"
+        },
+        "negative": {
+          "$ref": "#/$defs/NegativeDesignKnowledge"
+        },
+        "confidence_notes": {
+          "maxLength": 500,
+          "title": "Confidence Notes",
+          "type": "string"
+        },
+        "visible_uncertainties": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Visible Uncertainties",
+          "type": "array"
+        }
+      },
+      "required": [
+        "style_family",
+        "mood",
+        "material_palette",
+        "budget_band",
+        "primary_trade",
+        "likely_trades_required",
+        "positive",
+        "negative",
+        "confidence_notes"
+      ],
+      "title": "DesignLabelDraft",
+      "type": "object"
+    },
+    "NegativeDesignKnowledge": {
+      "properties": {
+        "design_failure": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Design Failure"
+        },
+        "why_it_fails": {
+          "maxLength": 800,
+          "minLength": 5,
+          "title": "Why It Fails",
+          "type": "string"
+        },
+        "scale_problem": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Scale Problem"
+        },
+        "material_conflict": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Material Conflict"
+        },
+        "lighting_problem": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lighting Problem"
+        },
+        "impractical_detail": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Impractical Detail"
+        },
+        "generic_ai_artifact": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Generic Ai Artifact"
+        },
+        "structural_violation": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Structural Violation"
+        }
+      },
+      "required": [
+        "why_it_fails"
+      ],
+      "title": "NegativeDesignKnowledge",
+      "type": "object"
+    },
+    "PositiveDesignKnowledge": {
+      "properties": {
+        "design_move": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Design Move"
+        },
+        "why_it_works": {
+          "maxLength": 800,
+          "minLength": 5,
+          "title": "Why It Works",
+          "type": "string"
+        },
+        "focal_point": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Focal Point"
+        },
+        "material_relationship": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Material Relationship"
+        },
+        "lighting_strategy": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Lighting Strategy"
+        },
+        "proportion_rule": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Proportion Rule"
+        },
+        "circulation_strategy": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Circulation Strategy"
+        },
+        "visual_hierarchy": {
+          "anyOf": [
+            {
+              "type": "string"
+            },
+            {
+              "type": "null"
+            }
+          ],
+          "default": null,
+          "title": "Visual Hierarchy"
+        },
+        "appropriate_room_conditions": {
+          "items": {
+            "type": "string"
+          },
+          "maxItems": 8,
+          "title": "Appropriate Room Conditions",
+          "type": "array"
+        }
+      },
+      "required": [
+        "why_it_works"
+      ],
+      "title": "PositiveDesignKnowledge",
+      "type": "object"
+    },
+    "ReviewStatus": {
+      "enum": [
+        "ingested",
+        "draft",
+        "validation_failed",
+        "reviewed",
+        "approved",
+        "rejected"
+      ],
+      "title": "ReviewStatus",
+      "type": "string"
+    },
+    "SourceType": {
+      "enum": [
+        "local_folder",
+        "studio",
+        "licensed",
+        "unknown"
+      ],
+      "title": "SourceType",
+      "type": "string"
+    },
+    "UsageRightsStatus": {
+      "enum": [
+        "unknown",
+        "internal_reference_only",
+        "licensed_for_analysis",
+        "licensed_for_training",
+        "studio_owned",
+        "permission_granted",
+        "restricted"
+      ],
+      "title": "UsageRightsStatus",
+      "type": "string"
+    }
+  },
+  "properties": {
+    "record_id": {
+      "title": "Record Id",
+      "type": "string"
+    },
+    "run_id": {
+      "title": "Run Id",
+      "type": "string"
+    },
+    "image_id": {
+      "title": "Image Id",
+      "type": "string"
+    },
+    "file_path": {
+      "title": "File Path",
+      "type": "string"
+    },
+    "sha256": {
+      "title": "Sha256",
+      "type": "string"
+    },
+    "source_type": {
+      "$ref": "#/$defs/SourceType"
+    },
+    "source_url": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Source Url"
+    },
+    "usage_rights_status": {
+      "$ref": "#/$defs/UsageRightsStatus"
+    },
+    "rulebook_version": {
+      "title": "Rulebook Version",
+      "type": "string"
+    },
+    "prompt_version": {
+      "title": "Prompt Version",
+      "type": "string"
+    },
+    "provider": {
+      "title": "Provider",
+      "type": "string"
+    },
+    "model_name": {
+      "title": "Model Name",
+      "type": "string"
+    },
+    "model_request_id": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "title": "Model Request Id"
+    },
+    "draft_label": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DesignLabelDraft"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "final_label": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/DesignLabelDraft"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null
+    },
+    "raw_response_json": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Raw Response Json"
+    },
+    "validation_errors": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Validation Errors",
+      "type": "array"
+    },
+    "review_warnings": {
+      "items": {
+        "type": "string"
+      },
+      "title": "Review Warnings",
+      "type": "array"
+    },
+    "status": {
+      "$ref": "#/$defs/ReviewStatus"
+    },
+    "curator_name": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Curator Name"
+    },
+    "curator_notes": {
+      "anyOf": [
+        {
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Curator Notes"
+    },
+    "created_at": {
+      "format": "date-time",
+      "title": "Created At",
+      "type": "string"
+    },
+    "updated_at": {
+      "format": "date-time",
+      "title": "Updated At",
+      "type": "string"
+    },
+    "reviewed_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Reviewed At"
+    },
+    "approved_at": {
+      "anyOf": [
+        {
+          "format": "date-time",
+          "type": "string"
+        },
+        {
+          "type": "null"
+        }
+      ],
+      "default": null,
+      "title": "Approved At"
+    }
+  },
+  "required": [
+    "record_id",
+    "run_id",
+    "image_id",
+    "file_path",
+    "sha256",
+    "source_type",
+    "source_url",
+    "usage_rights_status",
+    "rulebook_version",
+    "prompt_version",
+    "provider",
+    "model_name",
+    "model_request_id",
+    "draft_label",
+    "status",
+    "created_at",
+    "updated_at"
+  ],
+  "title": "CurationRecord",
+  "type": "object"
+}

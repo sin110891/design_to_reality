@@ -1,0 +1,17 @@
+versions:
+  concept_direction: "concept_direction"
+  image_edit: "image_edit"
+  evaluation: "evaluation"
+
+geometry_lock: |
+  Preserve perspective, camera position, walls, windows, doors, ceiling lines,
+  fixed plumbing, fireplace, and radiators. Do not alter room proportions.
+  Do not add impossible openings. Do not introduce floating fixtures or distorted furniture.
+  Do not copy a reference image literally.
+
+negative_constraints:
+  - Do not move windows, doors, structural walls, fireplaces, radiators, or plumbing.
+  - Do not alter room proportions.
+  - Do not add impossible openings.
+  - Do not introduce floating fixtures or distorted furniture.
+  - Do not copy a reference image literally.

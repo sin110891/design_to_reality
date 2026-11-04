@@ -1,0 +1,43 @@
+evaluation:
+  name: dark-room-v3-prompt-index
+  repetitions: 5
+cases:
+  - room_image_path: /Users/sinandjevdet/Downloads/lounge_kitchen_1_belgrave.jpeg
+    brief: "Dark contemporary european with minimalistic, rustic, and earthy feel for this lounge/kitchen"
+    room_type: mixed
+    style_family: Contemporary Europe
+    budget_band: high
+    constraints:
+      - do not move walls, doors, windows, radiators, or fireplace
+    inspiration_image_paths: []
+
+  - room_image_path: /Users/sinandjevdet/Downloads/lounge_kitchen_2_belgrave.jpeg
+    brief: "Dark contemporary european with minimalistic, rustic, and earthy feel for this lounge/kitchen"
+    room_type: mixed
+    style_family: Contemporary Europe
+    budget_band: high
+    constraints:
+      - do not move walls, doors, windows, radiators, or fireplace
+    inspiration_image_paths: []
+
+  - room_image_path: /Users/sinandjevdet/Downloads/bedroom_belgrave.jpeg
+    brief: "Dark contemporary european with minimalistic, rustic, and earthy feel for this bedroom"
+    room_type: bedroom
+    style_family: Contemporary Europe
+    budget_band: high
+    constraints:
+      - do not move walls, doors, windows, radiators, or fireplace
+    inspiration_image_paths: []
+
+  - room_image_path: /Users/sinandjevdet/Downloads/toilet_shower_belgrave.jpeg
+    brief: "Dark contemporary european with minimalistic, rustic, and earthy feel for this bathroom/toilet-shower"
+    room_type: mixed
+    style_family: Contemporary Europe
+    budget_band: high
+    constraints:
+      - do not move walls, doors, windows, radiators, or toilet and shower
+    inspiration_image_paths: []
+
+exports:
+  full_output_dir: data/evaluations
+  blind_output_dir: ~/Downloads/vision-engine-blind-evaluations

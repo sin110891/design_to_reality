@@ -1,0 +1,123 @@
+version: "1.0.0"
+subset_name: "Contemporary Europe"
+
+fields:
+  style_family:
+    type: single
+    allowed_values:
+      - Contemporary Europe
+    guidance: >
+      Select Contemporary Europe only when the space demonstrates restrained
+      material composition, contemporary European references, controlled visual
+      hierarchy, and contextually appropriate detailing.
+
+  mood:
+    type: multiple
+    min_items: 1
+    max_items: 5
+    allowed_values:
+      - warm
+      - calm
+      - restrained
+      - tactile
+      - intimate
+      - bright
+      - playful
+      - premium
+      - utilitarian
+
+  material_palette:
+    type: multiple
+    min_items: 1
+    max_items: 8
+    allowed_values:
+      - oak
+      - walnut
+      - ash
+      - limewash
+      - plaster
+      - brass
+      - stainless_steel
+      - marble
+      - terrazzo
+      - ceramic_tile
+      - linen
+      - glass
+
+  budget_band:
+    type: single
+    allowed_values:
+      - low
+      - medium
+      - medium_high
+      - high
+    definitions:
+      low: "Primarily decorative changes and readily available products."
+      medium: "Some bespoke elements with controlled material cost."
+      medium_high: "Multiple bespoke components or premium finishes."
+      high: "Extensive bespoke design, specialist fabrication, or premium materials."
+
+  primary_trade:
+    type: single
+    allowed_values:
+      - decorator
+      - joiner
+      - tiler
+      - electrician
+      - plumber
+      - plasterer
+      - flooring_installer
+      - general_builder
+      - furniture_supplier
+
+  likely_trades_required:
+    type: multiple
+    min_items: 1
+    max_items: 8
+    allowed_values:
+      - decorator
+      - joiner
+      - tiler
+      - electrician
+      - plumber
+      - plasterer
+      - flooring_installer
+      - general_builder
+      - furniture_supplier
+
+  room_type:
+    type: single
+    optional: true
+    allowed_values:
+      - living_room
+      - kitchen
+      - bedroom
+      - bathroom
+      - dining_room
+      - hallway
+      - study
+      - outdoor
+      - mixed
+      - unknown
+
+  project_type:
+    type: single
+    optional: true
+    allowed_values:
+      - residential
+      - hospitality
+      - workplace
+      - retail
+      - mixed
+      - unknown
+
+  furniture_style:
+    type: single
+    optional: true
+    allowed_values:
+      - low_profile_contemporary
+      - sculptural_minimal
+      - warm_classic_modern
+      - soft_organic
+      - mixed_eclectic
+      - unknown

@@ -1,0 +1,241 @@
+The COMPASS Mental Model
+
+Purpose: find valuable opportunities created by technological change, test them without blindly following consensus, and build a company whose advantage compounds.
+
+The central question is:
+
+What valuable outcome is currently blocked by a binding constraint that an exponential technology has just made removable—and can solving it create a feedback loop that improves with every customer?
+
+This combines first-principles reasoning, bottleneck analysis, diffusion theory, Bayesian thinking, agentic feedback loops and compounding moats.
+
+The seven components
+C — Capability curve
+
+Identify something whose capability is improving or whose cost, latency or difficulty is falling rapidly.
+
+Examples:
+
+AI reasoning
+Multimodal document understanding
+Coding agents
+Robotics
+Energy storage
+Genomics
+Compute
+Autonomous scientific research
+
+Do not merely ask:
+
+“Is AI growing?”
+
+Ask:
+
+“Which precise capability will become 10–100 times cheaper, faster or better over the next five years?”
+
+Wang’s broader argument is that AI progress represents the steepest current technological curve, while the immediate commercial bottleneck is its diffusion into real companies, governments and workflows.
+
+Founder questions
+
+What can be done today that was economically impossible three years ago?
+What still looks like a toy but is improving quickly?
+What becomes possible if present capability improves another tenfold?
+Which industries are organised around an assumption that will soon become false?
+O — Outcome, not technology
+
+Customers do not fundamentally buy AI. They buy:
+
+more revenue;
+lower costs;
+reduced risk;
+faster completion;
+greater certainty;
+better decisions;
+less administrative pain.
+
+Therefore, translate every technical opportunity into a measurable result.
+
+Weak:
+
+“An agentic construction platform.”
+
+Strong:
+
+“Reduce the time required to produce a defensible contractor quote from three days to two hours.”
+
+The stronger statement gives you:
+
+a customer;
+an existing process;
+an economic value;
+an observable metric;
+a basis for charging.
+
+Rule: never begin with an agent. Begin with an expensive outcome.
+
+M — Missing constraint
+
+This is the Scale AI lesson.
+
+Training a model required:
+
+compute;
+code;
+data.
+
+Compute and code were becoming accessible. Suitable data remained difficult to obtain. Wang concluded that data—not the model itself—was the binding constraint and built around it. Investors initially questioned whether data could support an enduring business, but Scale’s thesis came from the practical requirements of training models rather than what was fashionable.
+
+For any market, decompose the desired outcome:
+
+Outcome=f(inputs, process, decisions, feedback)
+
+Then ask:
+
+Which indispensable component is scarce, slow, unreliable or fragmented?
+
+Common AI-era constraints include:
+
+proprietary operational data;
+access to customer workflows;
+reliable evaluation;
+integrations with legacy systems;
+trust and accountability;
+permissions and data rights;
+human approval;
+distribution;
+physical-world execution;
+structured domain knowledge.
+
+As intelligence becomes cheaper, these complementary resources often become more valuable, not less valuable.
+
+P — Private, falsifiable thesis
+
+Wang describes conviction as holding beliefs about the future that have not yet become consensus. But “nobody agrees with me” is not evidence that you are right. Most unusual ideas are simply wrong.
+
+A useful contrarian thesis must be:
+
+logically derived;
+informed by direct experience;
+testable;
+time-bounded;
+economically important;
+capable of being disproved.
+
+Use this template:
+
+Because [capability curve] is changing, [new behaviour] will become possible. However, adoption will be constrained by [bottleneck]. If we solve it for [customer], we should improve [metric] by [amount] within [period].
+
+Example:
+
+Because multimodal agents can increasingly understand drawings, schedules and specifications, small contractors will automate much of quote production. However, adoption will be constrained by fragmented supplier prices, incomplete specifications and variation risk. A system combining those inputs should reduce quote-production time by at least 60% while making price changes traceable.
+
+That is a business hypothesis. “AI will transform construction” is merely a theme.
+
+A — Agentic feedback loop
+
+An agentic product should not just generate an answer once. It should operate within a closed loop:
+
+Observe→Decide→Act→Measure→Learn→Repeat
+
+For example:
+
+Read a construction brief.
+Extract work packages and missing information.
+Generate a bill of materials.
+retrieve product and labour prices;
+produce a proposed quote;
+observe contractor corrections;
+record whether the client accepts it;
+compare estimated and actual costs;
+improve the next quote.
+
+The metric is what grounds the system. Without a measurable objective, an “army of agents” can simply generate greater volumes of unverified work.
+
+Modern production guidance similarly treats agents as loops using models, tools and environmental feedback. It recommends explicit evaluations, stopping conditions, guardrails and human intervention for high-risk actions.
+
+A markdown file, cron job or collection of skills is merely implementation. The valuable system consists of:
+
+the objective;
+relevant state;
+reliable tools;
+evaluation criteria;
+permissions;
+memory;
+recovery mechanisms;
+human escalation;
+accumulated learning.
+S — Self-reinforcing assets
+
+Every completed transaction should leave the company stronger.
+
+Possible compounding assets include:
+
+proprietary data;
+corrections and failure examples;
+evaluation datasets;
+supplier mappings;
+customer integrations;
+reusable tools;
+workflow templates;
+domain-specific memory;
+trust and compliance evidence;
+network relationships;
+switching costs.
+
+Ask:
+
+“After serving customer 100, what can we do that a new competitor serving customer one cannot?”
+
+A weak AI product repeatedly calls the same public model.
+
+A strong AI company converts usage into:
+
+Better data→better decisions→better outcome→more usage→better data
+
+That is the real flywheel.
+
+S — Scepticism and staged conviction
+
+Conviction should increase with evidence.
+
+Stage	What you are entitled to believe
+Insight	“This deserves investigation.”
+Interviews	“The problem appears real.”
+Workflow observation	“I understand where the pain occurs.”
+Manual pilot	“The proposed intervention creates value.”
+Paid pilot	“Someone values it economically.”
+Repeated customers	“The problem and solution repeat.”
+Retention and margins	“This may support a durable business.”
+
+Before testing, write down:
+
+what would prove the thesis;
+what would weaken it;
+what would kill it;
+the date on which you will reassess it.
+
+This gives you conviction without delusion.
+
+The COMPASS opportunity equation
+
+Score each factor from 1–5:
+
+Opportunity Quality=
+D×R×T
+C×O×M×P×A×S×F
+	​
+
+
+Where:
+
+C: strength of capability curve;
+O: economic value of outcome;
+M: severity of missing constraint;
+P: strength of private insight;
+A: frequency and quality of feedback loop;
+S: strength of compounding asset;
+F: founder-market advantage;
+D: distribution difficulty;
+R: trust, liability and regulatory risk;
+T: time required to prove value.
+
+It is deliberately multiplicative. A huge market with no distribution or no meaningful bottleneck can still be a poor opportunity.

@@ -1,0 +1,42 @@
+inference:
+  timeout_seconds: 120
+  max_attempts: 3
+  temperature: 0.2
+  image_edit_temperature: 0.4
+
+images:
+  allowed_extensions: [".jpg", ".jpeg", ".png", ".webp"]
+  max_file_mb: 25
+
+retrieval:
+  image_similarity_weight: 0.35
+  text_similarity_weight: 0.25
+  metadata_match_weight: 0.25
+  architect_quality_weight: 0.15
+  top_k: 8
+  final_k: 3
+  min_diversity: 3
+
+review:
+  curator_name: "Lloyd Lee"
+
+generation:
+  variant_count: 3
+  concept_disclaimer: "Concept visual only — not a technical design, BoQ, or compliance guarantee."
+
+virtual_staging:
+  cumulative_preview_enabled_default: false
+  cumulative_preview_mode: local_composite
+
+paths:
+  curated_metadata: "data/curated/metadata.csv"
+  curated_images: "data/curated/images"
+  index_path: "data/indexes/curated.npz"
+  uploads: "data/uploads"
+  generated: "data/generated"
+  exports: "data/exports"
+
+region_detection:
+  model_name: gemini-3.5-flash-lite   # or gemini-2.5-flash
+  #min_confidence: 0.35
+  #temperature: 0.1

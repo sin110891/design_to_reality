@@ -1,0 +1,32 @@
+{
+  "style_family": "Contemporary Europe",
+  "mood": ["warm", "calm"],
+  "material_palette": ["oak", "plaster", "brass"],
+  "budget_band": "medium_high",
+  "primary_trade": "joiner",
+  "likely_trades_required": ["joiner", "decorator", "flooring_installer"],
+  "room_type": "living_room",
+  "positive": {
+    "design_move": "Restrained timber and mineral pairing",
+    "why_it_works": "Limited materials create a calm hierarchy with one clear dominant plane.",
+    "focal_point": "Joinery mass",
+    "material_relationship": "Oak against plaster",
+    "lighting_strategy": "Soft ambient layers",
+    "proportion_rule": "Furniture scaled to room",
+    "circulation_strategy": "Clear path around seating",
+    "visual_hierarchy": "Dominant wall, quieter floor",
+    "appropriate_room_conditions": ["daylit interiors"]
+  },
+  "negative": {
+    "design_failure": "Risk of generic catalogue styling",
+    "why_it_fails": "Without careful junctions the composition can feel interchangeable.",
+    "scale_problem": null,
+    "material_conflict": null,
+    "lighting_problem": null,
+    "impractical_detail": null,
+    "generic_ai_artifact": null,
+    "structural_violation": null
+  },
+  "confidence_notes": "Visible finishes support a medium-high budget estimate.",
+  "visible_uncertainties": ["Exact timber species is uncertain"]
+}

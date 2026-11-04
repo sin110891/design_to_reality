@@ -1,0 +1,16 @@
+inference:
+  timeout_seconds: 90
+  max_attempts: 3
+  concurrency: 2
+  temperature: 0.1
+
+images:
+  allowed_extensions: [".jpg", ".jpeg", ".png", ".webp"]
+  max_file_mb: 20
+
+review:
+  curator_name: "Lloyd Lee"
+
+paths:
+  rulebook: "configs/rulebook.v1.yaml"
+  prompt_template: "src/design_dataset/prompts/label_image_v1.jinja2"

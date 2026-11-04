@@ -1,0 +1,46 @@
+Edit the ORIGINAL ROOM IMAGE. This is an image-editing task, not text-to-image from scratch.
+
+Variant {{ variant_label }} ({{ variant_kind }}):
+{{ variant_guidance }}
+
+Mode: {{ mode }}
+Room type: {{ room_type }}
+Style family: {{ style_family }}
+Budget band: {{ budget_band or "unspecified" }}
+Brief: {{ brief }}
+
+User constraints:
+{% for c in constraints %}- {{ c }}
+{% else %}- (none beyond geometry lock)
+{% endfor %}
+
+Structured design direction:
+- Title: {{ design_direction.concept_title }}
+- Intent: {{ design_direction.design_intent }}
+- Mood: {{ design_direction.mood | join(", ") }}
+- Colour: {{ design_direction.colour_direction | join(", ") }}
+- Materials: {{ design_direction.material_palette | join(", ") }}
+- Lighting: {{ design_direction.lighting_strategy | join("; ") }}
+- Furniture: {{ design_direction.furniture_direction | join("; ") }}
+- Focal point: {{ design_direction.focal_point }}
+- Hierarchy: {{ design_direction.spatial_hierarchy }}
+- Preserve: {{ design_direction.preserve | join(", ") }}
+- Allowed changes: {{ design_direction.allowed_changes | join(", ") }}
+- Positive rules: {{ design_direction.positive_rules | join("; ") }}
+- Warnings: {{ design_direction.negative_warnings | join("; ") }}
+
+{% if references %}
+Curated reference cues (taste and material only — do not copy layout literally):
+{% for r in references %}- {{ r.image_id }}: materials={{ r.materials | join(", ") }}; observed surfaces={{ r.surface_materials }}; colours={{ r.colours | join(", ") }}; mood={{ r.mood | join(", ") }}; lighting={{ r.lighting }}; spatial feel={{ r.spatial_feel | join(", ") }}; {{ r.why }}
+{% endfor %}
+{% endif %}
+
+Geometry lock:
+{{ geometry_lock }}
+
+Hard negative constraints:
+{% for n in negative_constraints %}- {{ n }}
+{% endfor %}
+
+Output a single photorealistic edited room image that clearly shows the original room geometry with the approved design changes applied.
+Mark this as a concept visual only — not a technical design.

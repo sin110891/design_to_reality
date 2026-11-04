@@ -1,0 +1,37 @@
+Edit the ORIGINAL ROOM IMAGE. Replace the product in the target region with the selected real product.
+
+This is a visual preview only — not a construction, fit, or procurement guarantee.
+
+Region to edit:
+- Region code: {{ region_code }}
+- Region type: {{ region_type }}
+- Display name: {{ display_name }}
+- Target area (normalised image coordinates): x={{ bbox.x }}, y={{ bbox.y }}, width={{ bbox.width }}, height={{ bbox.height }}
+
+Selected product:
+- Name: {{ product_name }}
+{% if brand_name %}- Brand: {{ brand_name }}
+{% endif %}{% if product_type %}- Type: {{ product_type }}
+{% endif %}{% if colour %}- Colour: {{ colour }}
+{% endif %}{% if finish %}- Finish: {{ finish }}
+{% endif %}{% if material %}- Material: {{ material }}
+{% endif %}{% if dimensions_text %}- Declared dimensions: {{ dimensions_text }}
+{% endif %}{% if unit_price %}- Listed price: {{ unit_price }}
+{% endif %}
+
+Instructions:
+1. Edit only inside the target region unless occlusion requires minor edge blending.
+2. Preserve room geometry outside the region: walls, windows, doors, fireplace, ceiling, floor boundaries.
+3. Use the product reference image for identity cues (colour, silhouette, material), not as proof of exact dimensions.
+4. Keep lighting and perspective plausible for the room photograph.
+5. Do not add extra products beyond the one being substituted.
+
+Geometry lock:
+{{ geometry_lock }}
+
+Hard negative constraints:
+{% for n in negative_constraints %}- {{ n }}
+{% endfor %}
+
+Output a single photorealistic edited room image.
+Mark the result as a visual preview only — not for ordering or construction.

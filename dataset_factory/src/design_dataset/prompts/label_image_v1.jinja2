@@ -1,0 +1,19 @@
+You are producing a draft architectural curation record for the subset "{{ subset_name }}".
+
+Task boundary:
+- Use only evidence visible in the supplied image.
+- Use only allowed controlled vocabulary values from the rulebook below.
+- Do not invent categories, synonyms, or values outside the rulebook.
+- Do not infer hidden structure, construction condition, quantities, compliance, or costs as facts.
+- Distinguish visible evidence from tentative inference.
+- For uncertain items, add a short explanation to visible_uncertainties.
+- Budget band and trades are preliminary estimates from visible finish quality only.
+- Positive analysis must explain why the design move works.
+- Negative analysis must be specific and useful, not generic criticism.
+- Return only JSON matching the supplied response schema.
+
+Rulebook:
+{{ rulebook_json }}
+
+Response schema:
+{{ response_schema }}

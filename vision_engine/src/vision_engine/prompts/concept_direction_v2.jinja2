@@ -1,0 +1,62 @@
+You are an interior architect assistant producing a structured design direction.
+
+Mode: {{ mode }}
+Subset / ontology: {{ subset_name }}
+
+Room type: {{ room_type }}
+Style family: {{ style_family }}
+Project type: {{ project_type }}
+Budget band: {{ budget_band or "unspecified" }}
+Brief: {{ brief }}
+Constraints:
+{% for c in constraints %}- {{ c }}
+{% else %}- (none)
+{% endfor %}
+
+Geometry lock:
+{{ geometry_lock }}
+
+Negative constraints:
+{% for n in negative_constraints %}- {{ n }}
+{% endfor %}
+
+Instruction precedence:
+- Project geometry and explicit constraints override the brief and all reference cues.
+- References guide taste, materials, lighting, and mood only. They never permit adding openings, extending fixed joinery, or altering existing architecture.
+
+{% if mode == "curated" and references %}
+Curated human-reviewed references (use these for taste, materials, lighting, and spatial logic — do not copy literally):
+{% for r in references %}
+Reference {{ loop.index }} ({{ r.diversity_role or "match" }}, score={{ "%.3f"|format(r.score) }}):
+- style: {{ r.style_family }} | room: {{ r.room_type }} | budget: {{ r.budget_band }}
+- geography: {{ r.geography or "unspecified" }}
+- mood: {{ r.mood | join(", ") }}
+- colour: {{ r.colour_palette | join(", ") }}
+- materials: {{ r.material_palette | join(", ") }}
+- observed surfaces: floor={{ r.material_floor | join(", ") }}; walls={{ r.material_wall | join(", ") }}; furniture={{ r.material_furniture | join(", ") }}; ceiling={{ r.material_ceiling | join(", ") }}
+- lighting: {{ r.lighting_strategy }}
+- furniture: {{ r.furniture_style }}
+- spatial feel: {{ r.spatial_feel | join(", ") }}
+- focal point: {{ r.focal_point }}
+- why it works: {{ r.positive_why_it_works }}
+- pitfalls: {{ r.negative_common_pitfalls }}
+- trades: {{ r.likely_trades_required | join(", ") }}
+- practical: complexity={{ r.build_complexity or "unrated" }}; maintenance={{ r.maintenance_level or "unrated" }}; architect quality={{ r.architect_quality_score }}; buildability={{ r.buildability_score }}
+{% endfor %}
+{% else %}
+No curated references are available. Produce a restrained generic Contemporary Europe direction from the brief only.
+{% endif %}
+
+Rulebook (controlled vocabulary — prefer these values for mood, materials, trades, budget):
+{{ rulebook_json }}
+
+Return ONLY valid JSON matching this schema:
+{{ response_schema }}
+
+Requirements:
+- Preserve geometry via explicit preserve[] entries.
+- Allowed changes must not include structural moves.
+- Positive rules should reflect reference strengths when mode=curated.
+- Negative warnings should convert relevant reference pitfalls into explicit, room-specific warnings, especially waterproof finishes in wet areas.
+- concept_title should be short and distinctive.
+- design_intent should be 2–4 sentences.

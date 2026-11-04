@@ -1,0 +1,140 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Demo: Stepthrough pipeline",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/dataset_factory/demo/stepthrough_pipeline.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/dataset_factory",
+      "python": "${workspaceFolder}/dataset_factory/.venv/bin/python",
+      "env": {
+        "MODEL_PROVIDER": "fake",
+        "PYTHONPATH": "${workspaceFolder}/dataset_factory/src"
+      },
+      "args": ["--limit", "3"],
+      "justMyCode": true
+    },
+    {
+      "name": "Demo: Stepthrough pipeline (persist DB)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/dataset_factory/demo/stepthrough_pipeline.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/dataset_factory",
+      "python": "${workspaceFolder}/dataset_factory/.venv/bin/python",
+      "env": {
+        "MODEL_PROVIDER": "fake",
+        "PYTHONPATH": "${workspaceFolder}/dataset_factory/src"
+      },
+      "args": ["--limit", "3", "--persist"],
+      "justMyCode": true
+    },
+    {
+      "name": "Demo: Gemini full labelling flow",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}/dataset_factory/demo/gemini_label_flow.py",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/dataset_factory",
+      "python": "${workspaceFolder}/dataset_factory/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/dataset_factory/src"
+      },
+      "envFile": "${workspaceFolder}/dataset_factory/.env",
+      "args": ["--limit", "2"],
+      "justMyCode": true
+    },
+    {
+      "name": "CLI: init-db",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "design_dataset.cli",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/dataset_factory",
+      "python": "${workspaceFolder}/dataset_factory/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/dataset_factory/src"
+      },
+      "args": ["init-db"],
+      "justMyCode": true
+    },
+    {
+      "name": "CLI: ingest contemporary_europe",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "design_dataset.cli",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/dataset_factory",
+      "python": "${workspaceFolder}/dataset_factory/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/dataset_factory/src"
+      },
+      "args": [
+        "ingest",
+        "--input",
+        "data/raw_images/contemporary_europe"
+      ],
+      "justMyCode": true
+    },
+    {
+      "name": "CLI: label (fake, limit 3)",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "design_dataset.cli",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/dataset_factory",
+      "python": "${workspaceFolder}/dataset_factory/.venv/bin/python",
+      "env": {
+        "MODEL_PROVIDER": "fake",
+        "MODEL_NAME": "fake-model-v1",
+        "PYTHONPATH": "${workspaceFolder}/dataset_factory/src"
+      },
+      "args": ["label", "--limit", "3"],
+      "justMyCode": true
+    },
+    {
+      "name": "CLI: report",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "design_dataset.cli",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/dataset_factory",
+      "python": "${workspaceFolder}/dataset_factory/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/dataset_factory/src"
+      },
+      "args": ["report"],
+      "justMyCode": true
+    },
+    {
+      "name": "Pytest: current file",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/dataset_factory",
+      "python": "${workspaceFolder}/dataset_factory/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/dataset_factory/src"
+      },
+      "args": ["${file}", "-v"],
+      "justMyCode": false
+    },
+    {
+      "name": "Pytest: all tests",
+      "type": "debugpy",
+      "request": "launch",
+      "module": "pytest",
+      "console": "integratedTerminal",
+      "cwd": "${workspaceFolder}/dataset_factory",
+      "python": "${workspaceFolder}/dataset_factory/.venv/bin/python",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}/dataset_factory/src"
+      },
+      "args": ["tests", "-v"],
+      "justMyCode": false
+    }
+  ]
+}

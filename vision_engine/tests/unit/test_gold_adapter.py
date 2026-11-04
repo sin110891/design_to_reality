@@ -9,7 +9,7 @@ from vision_engine.domain.enums import ReviewStatus
 
 ROOT = Path(__file__).resolve().parents[2]
 FACTORY = ROOT.parent / "dataset_factory"
-GOLD = FACTORY / "data" / "exports" / "gemini_demo_gold.jsonl"
+GOLD = FACTORY / "tests" / "fixtures" / "sample_data" / "exports" / "gemini_demo_gold.jsonl"
 
 
 def test_gold_adapter_maps_final_label():

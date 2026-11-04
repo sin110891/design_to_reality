@@ -1,0 +1,21 @@
+.git
+**/.venv
+**/__pycache__
+**/*.py[cod]
+**/*.egg-info
+**/.pytest_cache
+**/.mypy_cache
+**/.ruff_cache
+.DS_Store
+.idea
+.vscode
+
+# local secrets
+**/.env
+
+# local runtime data and private material (tests use tests/fixtures instead)
+dataset_factory/data
+vision_engine/data
+knowledge_base
+temp_dir
+**/*.xlsx
